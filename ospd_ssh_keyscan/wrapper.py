@@ -64,7 +64,7 @@ class OSPDsshkeyscan(OSPDaemon):
     def __init__(self, certfile, keyfile, cafile):
         """ Initializes the ospd-ssh-keyscan daemon's internal data. """
         super(OSPDsshkeyscan, self).__init__(certfile=certfile, keyfile=keyfile,
-                                       cafile=cafile)
+                                             cafile=cafile)
         self.server_version = __version__
         self.scanner_info['name'] = 'ssh-keyscan'
         self.scanner_info['version'] = 'Not available'
@@ -91,11 +91,12 @@ class OSPDsshkeyscan(OSPDaemon):
 
         options = self.get_scan_options(scan_id)
         port = options.get('sshport')
-        result = subprocess.check_output(['ssh-keyscan', '-p %d' % port, target], stderr=subprocess.STDOUT)
+        result = subprocess.check_output(['ssh-keyscan', '-p %d' % port, target],
+                                         stderr=subprocess.STDOUT)
 
         if result is None:
             self.add_scan_error(scan_id, host=target,
-              value="A problem occurred trying to execute 'ssh-keyscan'.")
+                                value="A problem occurred trying to execute 'ssh-keyscan'.")
             self.add_scan_error(scan_id, host=target,
                                 value="The result of 'ssh-keyscan' was empty.")
             return 2
@@ -136,6 +137,7 @@ class OSPDsshkeyscan(OSPDaemon):
                               value='Via ssh-keyscan found keys:\n\n%s' % '\n'.join(key_data))
 
         return 1
+
 
 def main():
     """ OSP ssh-keyscan main function. """
