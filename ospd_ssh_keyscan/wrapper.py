@@ -36,7 +36,7 @@ This tool is available for most operating systems as part of the OpenSSH package
 It gathers the public ssh host keys of a number of hosts.
 
 The current version of ospd-ssh-keyscan is a very simple one, collecting the
-keys as host details. Optionally, the keys are addtionally dumped in log results.
+keys as host details. Optionally, the keys are additionally dumped in log results.
 """
 
 OSPD_PARAMS = {
@@ -127,7 +127,7 @@ class OSPDsshkeyscan(OSPDaemon):
         self.add_scan_log(scan_id, host=target, name='ssh-keyscan summary',
                           value='Via ssh-keyscan %d public ssh keys were found at port %d.' % (len(key_data), port))
 
-        # In case parse errors occured, report them a error message
+        # In case parse errors occurred, report them a error message
         if len(parse_errors) > 0:
             self.add_scan_error(scan_id, host=target,
                                 value='The following lines caused parse errors:\n\n%s' % '\n'.join(parse_errors))
