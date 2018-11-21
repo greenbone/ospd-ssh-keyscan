@@ -16,7 +16,7 @@ Then you can create scan tasks to use this scanner.
 Python 3 and later is supported.
 
 Beyond the [ospd base library](https://github.com/greenbone/ospd) and the
-`ssh-keyscan` tool, `ospd-ssh-keyscan` has no further dependecies.
+`ssh-keyscan` tool, `ospd-ssh-keyscan` has no further dependencies.
 
 There are no special installation aspects for this module beyond the general
 installation guide for ospd-based scanners.
