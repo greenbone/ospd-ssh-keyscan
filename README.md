@@ -2,6 +2,8 @@
 
 # ospd-ssh-keyscan
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/greenbone/ospd-ssh-keyscan/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/greenbone/ospd-ssh-keyscan/?branch=master)
+
 This is an OSP server implementation to allow GVM to remotely control
 the `ssh-keyscan` tool of OpenSSH, see <https://man.openbsd.org/ssh-keyscan.1>.
 
